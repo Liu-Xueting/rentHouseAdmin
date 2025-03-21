@@ -41,11 +41,11 @@ export interface ApartmentInterface {
   feeValueVoList?: FeeInfoInterface['feeValueList']
   // 图片信息
   graphVoList?:
-    | {
-        url: string
-        name: number
-      }[]
-    | UploadFile[]
+  | {
+    url: string
+    name: number
+  }[]
+  | UploadFile[]
 }
 // 省市区
 export interface RegionInterface {
@@ -126,11 +126,11 @@ export interface RoomInterface {
   leaseTermList?: TermInfoInterface[]
   // 图片信息
   graphVoList?:
-    | {
-        url: string
-        name: number
-      }[]
-    | UploadFile[]
+  | {
+    url: string
+    name: number
+  }[]
+  | UploadFile[]
 }
 // 保存房间的信息
 export interface SaveRoomInterface {
@@ -151,11 +151,11 @@ export interface SaveRoomInterface {
   leaseTermIds: number[]
   // 图片信息
   graphVoList:
-    | {
-        url: string
-        name: number
-      }[]
-    | UploadFile[]
+  | {
+    url: string
+    name: number
+  }[]
+  | UploadFile[]
 }
 // 属性信息列表
 export interface AttrInfoInfoInterface {
