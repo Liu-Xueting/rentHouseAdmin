@@ -3,17 +3,10 @@
     <slot></slot>
   </el-table>
   <!--        分页-->
-  <el-pagination
-    v-model:current-page="pageInfo.currentPage"
-    v-model:page-size="pageInfo.pageSize"
-    :page-sizes="[10, 20, 30]"
-    layout="prev, pager, next,sizes,total"
-    :total="pageInfo.total"
-    :style="{ marginTop: '20px' }"
-    :hide-on-single-page="true"
-    @size-change="sizeChange"
-    @current-change="currentChange"
-  />
+  <el-pagination v-model:current-page="pageInfo.currentPage" v-model:page-size="pageInfo.pageSize"
+    :page-sizes="[10, 20, 30]" layout="prev, pager, next,sizes,total" :total="pageInfo.total"
+    :style="{ marginTop: '20px' }" :hide-on-single-page="true" @size-change="sizeChange"
+    @current-change="currentChange" />
 </template>
 <script setup lang="ts">
 import { usePage } from '@/hooks/usePagination'
@@ -25,7 +18,7 @@ const props = defineProps({
     default: () => [],
   },
 })
-const showData = ref([] as typeof props.data)
+const showData = ref<any[]>([])
 // 分页hooks
 const { pageInfo, sizeChange, currentChange } = usePage({
   callback: getShowDataInfo,

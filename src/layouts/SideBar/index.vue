@@ -3,15 +3,8 @@
     <Logo />
 
     <el-scrollbar>
-      <el-menu
-        background-color="#001529"
-        text-color="hsla(0,0%,100%,.65)"
-        active-text-color="#fff"
-        :defaultActive="activeMenu"
-        :collapse="collapse"
-        :unique-opened="true"
-        router
-      >
+      <el-menu background-color="#001529" text-color="hsla(0,0%,100%,.65)" active-text-color="#fff"
+        :defaultActive="activeMenu" :collapse="collapse" :unique-opened="true" router>
         <el-menu-item index="/index">
           <el-icon>
             <component is="HomeFilled"></component>
@@ -51,9 +44,7 @@
             </el-icon>
             <span>公寓管理</span>
           </template>
-          <el-menu-item
-            index="/apartmentManagement/apartmentManagement/apartmentManagement"
-          >
+          <el-menu-item index="/apartmentManagement/apartmentManagement/apartmentManagement">
             <el-icon>
               <component is="OfficeBuilding"></component>
             </el-icon>
@@ -61,9 +52,7 @@
               <span>公寓管理</span>
             </template>
           </el-menu-item>
-          <el-menu-item
-            index="/apartmentManagement/roomManagement/roomManagement"
-          >
+          <el-menu-item index="/apartmentManagement/roomManagement/roomManagement">
             <el-icon>
               <component is="House"></component>
             </el-icon>
@@ -71,9 +60,7 @@
               <span>房间管理</span>
             </template>
           </el-menu-item>
-          <el-menu-item
-            index="/apartmentManagement/attributeManagement/attributeManagement"
-          >
+          <el-menu-item index="/apartmentManagement/attributeManagement/attributeManagement">
             <el-icon>
               <component is="List"></component>
             </el-icon>

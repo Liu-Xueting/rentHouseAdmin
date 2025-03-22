@@ -1,4 +1,4 @@
-## 后台管理系统
+# 后台管理系统
 
 采用 vue3 全家桶（vite+pinia+element-plus+vue-router@4）
 
@@ -23,7 +23,6 @@ npm run dev
 ```bash
 npm run build:prod
 ```
-
 
 ## 功能介绍
 
@@ -92,6 +91,7 @@ guiug-sph-mall-admin
 ├─ tsconfig.json          # typescript 全局配置
 └─ vite.config.ts         # vite 全局配置文件
 ```
+
 ## 文档地址
 
 http://139.198.163.91:8080/doc.html#/home

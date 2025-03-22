@@ -1,8 +1,8 @@
 <template>
-  <component :is="is" v-bind="$attrs"></component>
+  <component :is="props.is" v-bind="$attrs"></component>
 </template>
 <script setup lang="ts">
-defineProps<{
+const props = defineProps<{
   is: string
 }>()
 </script>
