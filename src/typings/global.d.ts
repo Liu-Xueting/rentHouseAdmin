@@ -1,10 +1,4 @@
-/*
- * @Description:
- * @Autor: codeBo
- * @Date: 2023-03-03 15:37:08
- * @LastEditors: 1547702880@@qq.com
- * @LastEditTime: 2023-03-09 10:01:43
- */
+
 declare type Nullable<T> = T | null
 declare type NonNullable<T> = T extends null | undefined ? never : T
 declare type Recordable<T = any> = Record<string, T>

@@ -1,10 +1,4 @@
-/*
- * @Description: tabsBar 仓库
- * @Autor: 李海波
- * @Date: 2023-03-03 15:37:08
- * @LastEditors: 1547702880@@qq.com
- * @LastEditTime: 2023-03-27 15:58:56
- */
+
 import { defineStore } from 'pinia'
 import router from '@/router/index'
 import { RouteRecordRaw } from 'vue-router'
