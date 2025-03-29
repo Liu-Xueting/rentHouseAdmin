@@ -109,4 +109,4 @@ export function updateAgreementStatusById({
     `/admin/agreement/updateStatusById?id=${id}&status=${status}`,
   )
 }
-//#endregion
+
