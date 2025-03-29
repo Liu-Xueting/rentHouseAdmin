@@ -4,9 +4,7 @@ import http from '@/utils/http'
 import type { LoginData, UserInfo } from './types'
 import { ValidateUCodeData } from './types'
 
-/**
- * 登录
- */
+
 export function login(data: LoginData) {
   return http.post<string>('/admin/login', data)
 }

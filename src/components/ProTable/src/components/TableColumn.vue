@@ -2,7 +2,7 @@
   <component :is="renderLoop(column)"></component>
 </template>
 <script lang="tsx" setup name="TableColumn">
-import { inject, ref, useSlots, VNode } from 'vue'
+import { inject, ref, useSlots } from 'vue'
 import { ColumnProps } from '../types'
 import { filterEnum, formatValue, handleRowAccordingToProp } from '../utils'
 
@@ -32,42 +32,42 @@ const getTagType = (item: ColumnProps, scope: { [key: string]: any }) => {
     'tag',
   ) as any
 }
-const renderLoop = (item: ColumnProps): VNode => {
-  const renderLoop = (item: ColumnProps) => {
-    return (
-      <>
-        {item.isShow && (
-          <el-table-column
-            {...item}
-            align={item.align ?? 'center'}
-            showOverflowTooltip={
-              item.showOverflowTooltip ?? item.prop !== 'operation'
-            }
-          >
-            {{
-              default: (scope: any) => {
-                if (item._children)
-                  return item._children.map((child) => renderLoop(child))
-                if (item.render) return item.render(scope)
-                if (slots[item.prop!]) return slots[item.prop!]!(scope)
-                if (item.tag)
-                  return (
-                    <el-tag type={getTagType(item, scope)}>
-                      {renderCellData(item, scope)}
-                    </el-tag>
-                  )
-                return renderCellData(item, scope)
-              },
-              header: () => {
-                if (item.headerRender) return item.headerRender(item)
-                if (slots[`${item.prop}Header`])
-                  return slots[`${item.prop}Header`]!({ row: item })
-                return item.label
-              },
-            }}
-          </el-table-column>
-        )}
-      </>
-    )
-  }
+
+const renderLoop = (item: ColumnProps) => {
+  return (
+    <>
+      {item.isShow && (
+        <el-table-column
+          {...item}
+          align={item.align ?? 'center'}
+          showOverflowTooltip={
+            item.showOverflowTooltip ?? item.prop !== 'operation'
+          }
+        >
+          {{
+            default: (scope: any) => {
+              if (item._children)
+                return item._children.map((child) => renderLoop(child))
+              if (item.render) return item.render(scope)
+              if (slots[item.prop!]) return slots[item.prop!]!(scope)
+              if (item.tag)
+                return (
+                  <el-tag type={getTagType(item, scope)}>
+                    {renderCellData(item, scope)}
+                  </el-tag>
+                )
+              return renderCellData(item, scope)
+            },
+            header: () => {
+              if (item.headerRender) return item.headerRender(item)
+              if (slots[`${item.prop}Header`])
+                return slots[`${item.prop}Header`]!({ row: item })
+              return item.label
+            },
+          }}
+        </el-table-column>
+      )}
+    </>
+  )
+}
 </script>
